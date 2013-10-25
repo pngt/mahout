@@ -19,7 +19,7 @@ package org.apache.mahout.text;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.NullWritable;
-import org.apache.hadoop.mapreduce.TaskAttemptContext;
+import org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl;
 import org.apache.hadoop.mapreduce.TaskAttemptID;
 import org.apache.lucene.index.*;
 import org.apache.mahout.common.HadoopUtil;
@@ -40,7 +40,7 @@ public class LuceneSegmentRecordReaderTest extends AbstractLuceneStorageTest {
   @Before
   public void before() throws IOException, InterruptedException {
     LuceneStorageConfiguration lucene2SeqConf = new LuceneStorageConfiguration(new Configuration(), asList(getIndexPath1()), new Path("output"), "id", asList("field"));
-    configuration = lucene2SeqConf.serialize();
+    configuration = lucene2SeqConf.serializeToConfiguration();
     commitDocuments(getDirectory(getIndexPath1AsFile()), docs.subList(0, 500));
     commitDocuments(getDirectory(getIndexPath1AsFile()), docs.subList(500, 1000));
 

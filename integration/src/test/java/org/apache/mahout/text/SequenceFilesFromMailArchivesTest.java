@@ -33,6 +33,7 @@ import org.apache.mahout.common.iterator.sequencefile.SequenceFileIterator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * Test case for the SequenceFilesFromMailArchives command-line application.
@@ -75,7 +76,7 @@ public final class SequenceFilesFromMailArchivesTest extends MahoutTestCase {
       Closeables.close(gzOut, false);
     }    
   }
-
+  @Ignore
   @Test
   public void testSequential() throws Exception {
 
