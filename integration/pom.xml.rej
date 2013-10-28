@@ -1,0 +1,35 @@
+***************
+*** 171,178 ****
+  
+      <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-client</artifactId>
+-       <version>0.95.1-hadoop1</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+--- 255,278 ----
+  
+      <dependency>
+        <groupId>org.apache.hbase</groupId>
++       <artifactId>hbase-common</artifactId>
++       <version>${hbase.version}</version>
++       <exclusions>
++          <exclusion>
++             <groupId>org.slf4j</groupId>
++             <artifactId>slf4j-log4j12</artifactId>
++          </exclusion>
++          <exclusion>
++             <groupId>log4j</groupId>
++             <artifactId>log4j</artifactId>
++          </exclusion>
++       </exclusions>
++     </dependency>
++ 
++     <dependency>
++       <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-client</artifactId>
++       <version>${hbase.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.slf4j</groupId>

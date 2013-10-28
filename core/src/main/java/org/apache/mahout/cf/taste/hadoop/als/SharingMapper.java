@@ -32,7 +32,7 @@ import java.io.IOException;
  * @param <K2>
  * @param <V2>
  */
-public abstract class SharingMapper<K1,V1,K2,V2,S> extends Mapper<K1,V1,K2,V2> {
+public class SharingMapper<K1,V1,K2,V2,S> extends Mapper<K1,V1,K2,V2> {
 
   private static Object SHARED_INSTANCE;
 
@@ -41,7 +41,9 @@ public abstract class SharingMapper<K1,V1,K2,V2,S> extends Mapper<K1,V1,K2,V2> {
    *
    * @param context mapper's context
    */
-  abstract S createSharedInstance(Context context) throws IOException;
+  S createSharedInstance(Context context) throws IOException {
+    return null;
+  }
 
   final void setupSharedInstance(Context context) throws IOException {
     if (SHARED_INSTANCE == null) {
