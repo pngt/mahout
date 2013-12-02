@@ -64,7 +64,7 @@ public final class DataLoader {
   private static boolean parseString(Attribute[] attrs, Set<String>[] values, CharSequence string,
     boolean regression) {
     String[] tokens = COMMA_SPACE.split(string);
-    Preconditions.checkArgument(tokens.length == attrs.length, "Wrong number of attributes in the string");
+    Preconditions.checkArgument(tokens.length == attrs.length, "[parseString] Wrong number of attributes in the string: " + string);
 
     // extract tokens and check is there is any missing value
     for (int attr = 0; attr < attrs.length; attr++) {
